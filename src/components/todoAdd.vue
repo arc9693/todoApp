@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="todoAdd">
-    <input type="text" v-model="item" placeholder="Add todo item.."/>
-    <button type="button" name="button" v-on:click="Addthis" class="teal">Add</button>
+    <input type="text"  v-model="item" placeholder="Add todo item.."/>
+    <button type="button" name="button" v-on:click="Addthis" class="teal" >Add</button>
 
   </div>
 </template>
@@ -12,13 +12,16 @@ export default {
   data(){
     return{
     item:'',
+
   }
   },
   methods:{
     Addthis(){
+      if (!this.item) return alert('add something');
       this.$emit("todo:add",this.item);
       this.item='';
-    }
+    },
+
   }
 }
 </script>
