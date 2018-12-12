@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     <todoAdd v-on:todo:add="addTodo"/>
-    <todoItems v-for="todo in todos" v-bind:todo="todo" v-on:todo:remove="removeTodo"/>
+    <todoItems v-for="(todo,index) in todos" :key=index :v-bind:todo="todo" v-on:todo:remove="removeTodo"/>
   </div>
 </template>
 
